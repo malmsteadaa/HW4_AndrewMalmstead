@@ -111,12 +111,31 @@ myClass.push(0,2)
             assertEquals(x,myClass.peek(x))
         }
     }
+    //Purpose: Check if we are able to fill the stack to the point where it throws an exception.
+    fun testIsFull(){
+        var output=""
+        val myClass=problem1()
+        try {
+            while (true){
+                myClass.push(0,2)
+            }
+        }catch(e:Exception){output=e.localizedMessage.toString()}
+        assertEquals( "Out of Space.",output)
+
+
+    }
 //To check if the stack is initially empty then pushed to check if its not empty.
     fun testIsEmpty() {
+    var output=""
         val myClass=problem1()
         assertEquals(true,myClass.isEmpty(0))
         myClass.push(0,2)
         assertEquals(false,myClass.isEmpty(0))
+    try{
+myClass.pop(0)
+        myClass.pop(0)
+    }catch(e:Exception){output=e.localizedMessage.toString()}
+    assertEquals("Trying to pop an empty stack.",output)
     }
 //add into each stack and check their respective current index.
     fun testAbsTopOfStack() {
