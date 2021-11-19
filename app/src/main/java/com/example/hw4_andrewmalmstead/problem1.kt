@@ -4,13 +4,14 @@ import java.lang.Exception
 
 class problem1 {
     var stacksize=100
-    var buffer= arrayOf<Int>(stacksize*3)
+    var buffer= IntArray(stacksize*3)
     var stackpointer=arrayOf(-1,-1,-1)
 fun push(stacknum:Int, value:Int){
 if(stackpointer[stacknum]+1>=stacksize)
     throw Exception("Out of Space.")
     stackpointer[stacknum]++
-    buffer[absTopOfStack(stacknum)]=value
+    val index=absTopOfStack(stacknum)
+    buffer[index]=value
 
 }
     fun pop(stackNum: Int):Int{
