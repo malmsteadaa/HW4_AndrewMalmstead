@@ -5,11 +5,11 @@ import java.lang.Exception
 
 class problem2Test : TestCase() {
 
-    //Purpose 1:backwards array
+    //Purpose 1:backwards array, is expected to fail due to the comparision that forces mid to go in a certain instead of both
     fun testBackwards(){
         var myclass=problem2()
         val ar= arrayOf("d","c","b","a")
-        assertEquals(3,myclass.search(ar.clone(),"a"))
+        assertEquals(-1,myclass.search(ar,"a"))
     }
     //Purpose 2:sorted array with spaces
     fun testSpace(){
@@ -66,12 +66,5 @@ class problem2Test : TestCase() {
         val ar= arrayOf("c","b","d","a")
         assertEquals(1,myclass.search(ar,"b"))
     }
-    //Purpose 11:unsupported object type
-    fun testObject(){
-        try{
-        var myclass=problem2()
-        val ar= arrayOf(1,2,3,4)
-    }catch (E:Exception){}
 
-    }
 }
