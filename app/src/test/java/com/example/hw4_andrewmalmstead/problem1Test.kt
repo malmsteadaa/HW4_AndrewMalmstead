@@ -63,7 +63,7 @@ myClass.buffer=temp.clone()
             assertEquals(9,x)
         }
     }
-
+//Purpose: To fill the stack then set the current index to a smaller value so that we can test tail end cutting
     fun testSetStackpointer() {
         val myClass=problem1()
         for(x in range(0,10)){
@@ -77,13 +77,13 @@ myClass.buffer=temp.clone()
         }
         assertEquals(7,count)
     }
-
+//push a single element into the stack and see if it's there.
     fun testPush() {
         val myClass=problem1()
 myClass.push(0,2)
         assertEquals(2,myClass.buffer[0])
     }
-
+//push into each stack then pop them
     fun testPop() {
         val myClass=problem1()
         myClass.push(0,2)
@@ -94,7 +94,7 @@ myClass.push(0,2)
         myClass.push(2,2)
         assertEquals(myClass.pop(2),2)
     }
-
+//push each stack a set of elements ranging from 0 to 10, then use the built in function to peek each stack.
     fun testPeek() {
         val myClass=problem1()
 
@@ -111,14 +111,14 @@ myClass.push(0,2)
             assertEquals(x,myClass.peek(x))
         }
     }
-
+//To check if the stack is initially empty then pushed to check if its not empty.
     fun testIsEmpty() {
         val myClass=problem1()
         assertEquals(true,myClass.isEmpty(0))
         myClass.push(0,2)
         assertEquals(false,myClass.isEmpty(0))
     }
-
+//add into each stack and check their respective current index.
     fun testAbsTopOfStack() {
         val myClass=problem1()
 
